@@ -27,17 +27,18 @@ export default function BlogPage() {
             </div>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto h-[30vh] sm:h-[40vh] md:h-[50vh] flex items-center">
+          <div className="relative z-10 max-w-7xl mx-auto h-[35vh] sm:h-[40vh] md:h-[50vh] flex items-center mt-8 sm:mt-16 md:mt-24">
             <div className="text-center w-full">
               {/* Stats Section */}
               <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto px-3 sm:px-4 md:px-6"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto px-3 sm:px-4 md:px-6 -mt-8 sm:-mt-12 md:-mt-16"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
+                {/* First Card */}
                 <motion.div
-                  className="p-3 sm:p-4 md:p-6 bg-white/90 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 w-[80%] sm:w-full mx-auto"
+                  className="p-1 sm:p-2 md:p-2 bg-white/90 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 w-[70%] sm:w-full mx-auto min-h-[60px] sm:min-h-[100px] md:min-h-[120px]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -45,16 +46,18 @@ export default function BlogPage() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+                    className="flex flex-row sm:flex-col items-center sm:justify-center h-full py-0.5 sm:py-2 gap-1.5 sm:gap-0 justify-center"
                   >
-                    <h3 className="text-lg sm:text-2xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1 sm:mb-2">
+                    <h3 className="text-xs sm:text-xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-0 sm:mb-1">
                       15k+
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">Students Placed</p>
+                    <p className="text-[10px] sm:text-sm md:text-base text-gray-700 font-medium">Students Placed</p>
                   </motion.div>
                 </motion.div>
 
+                {/* Second Card */}
                 <motion.div
-                  className="p-3 sm:p-4 md:p-6 bg-white/90 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 w-[80%] sm:w-full mx-auto"
+                  className="p-1 sm:p-2 md:p-2 bg-white/90 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 w-[70%] sm:w-full mx-auto min-h-[60px] sm:min-h-[100px] md:min-h-[120px]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -62,16 +65,18 @@ export default function BlogPage() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
+                    className="flex flex-row sm:flex-col items-center sm:justify-center h-full py-0.5 sm:py-2 gap-1.5 sm:gap-0 justify-center"
                   >
-                    <h3 className="text-lg sm:text-2xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1 sm:mb-2">
+                    <h3 className="text-xs sm:text-xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-0 sm:mb-1">
                       50+
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">Universities</p>
+                    <p className="text-[10px] sm:text-sm md:text-base text-gray-700 font-medium">Universities</p>
                   </motion.div>
                 </motion.div>
 
+                {/* Third Card */}
                 <motion.div
-                  className="p-3 sm:p-4 md:p-6 bg-white/90 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 w-[80%] sm:w-full mx-auto"
+                  className="p-1 sm:p-2 md:p-2 bg-white/90 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 w-[70%] sm:w-full mx-auto min-h-[60px] sm:min-h-[100px] md:min-h-[120px]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -79,11 +84,12 @@ export default function BlogPage() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.7, type: "spring", stiffness: 200 }}
+                    className="flex flex-row sm:flex-col items-center sm:justify-center h-full py-0.5 sm:py-2 gap-1.5 sm:gap-0 justify-center"
                   >
-                    <h3 className="text-lg sm:text-2xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1 sm:mb-2">
+                    <h3 className="text-xs sm:text-xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-0 sm:mb-1">
                       25+
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">Countries</p>
+                    <p className="text-[10px] sm:text-sm md:text-base text-gray-700 font-medium">Countries</p>
                   </motion.div>
                 </motion.div>
               </motion.div>
