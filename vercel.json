@@ -1,0 +1,13 @@
+{
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SANITY_PROJECT_ID": "ipz2xjua",
+    "NEXT_PUBLIC_SANITY_DATASET": "blogconsult",
+    "NEXT_PUBLIC_SANITY_API_VERSION": "2024-03-01"
+  }
+}
