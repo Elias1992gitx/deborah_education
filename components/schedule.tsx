@@ -41,17 +41,17 @@ export default function ScheduleCallCard() {
       className={`fixed z-40 ${
         isExpanded
           ? 'inset-0 flex items-center justify-center pt-20 sm:pt-24 md:pt-28 p-2 sm:p-4 md:p-6 bg-black/20 backdrop-blur-sm'
-          : 'bottom-16 sm:bottom-6 left-1/2 sm:left-6 -translate-x-1/2 sm:translate-x-0'
+          : 'bottom-16 left-4 sm:left-6'
       }`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
       <motion.div
-        className={`bg-white/90 backdrop-blur-sm rounded-full sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ${
+        className={`bg-white/90 backdrop-blur-sm ${
           isExpanded
-            ? 'w-[95vw] sm:w-[85vw] md:w-[70vw] max-w-[800px] h-[80vh] sm:h-[75vh] md:h-[70vh] max-h-[800px] rounded-2xl'
-            : 'w-[180px] sm:w-[220px]'
+            ? 'w-[95vw] sm:w-[85vw] md:w-[70vw] max-w-[800px] h-[80vh] sm:h-[75vh] md:h-[70vh] max-h-[800px] rounded-lg sm:rounded-xl'
+            : 'w-[180px] sm:w-[220px] rounded-lg sm:rounded-xl'
         }`}
         initial={isExpanded ? { scale: 0.9, opacity: 0 } : { scale: 1 }}
         animate={isExpanded ? { scale: 1, opacity: 1 } : { scale: 1 }}
@@ -102,7 +102,7 @@ export default function ScheduleCallCard() {
               text="Schedule"
               className="w-full text-xs sm:text-sm py-1.5 sm:py-2 px-3 sm:px-4 
                        bg-gray-200 
-                       text-white font-medium rounded-full
+                       text-white font-medium rounded-lg
                        hover:shadow-lg hover:shadow-blue-300/20
                        active:scale-95 transform transition-all duration-200"
               onClick={() => {

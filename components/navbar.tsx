@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { ChevronDown, Menu, Search } from 'lucide-react'
@@ -34,6 +34,7 @@ type CountryKey = keyof typeof countryData
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isSheetOpen, setIsSheetOpen] = useState(false)
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -57,14 +58,17 @@ export default function Navbar() {
   const NavLink = ({
     href,
     children,
+    onClick,
   }: {
     href: string
     children: React.ReactNode
+    onClick?: () => void
   }) => (
     <Link
       href={href}
       className="relative text-gray-600 hover:text-[#30745c] group py-2"
       prefetch={true}
+      onClick={onClick}
     >
       <span className="relative z-10">{children}</span>
       <motion.span
@@ -160,30 +164,13 @@ export default function Navbar() {
     </DropdownMenu>
   )
 
-  const NavItems = () => (
+  const NavItems = ({ closeSheet }: { closeSheet?: () => void }) => (
     <>
-      <NavLink href="/about-us">About Us</NavLink>
-      <NavLink href="/services">Services</NavLink>
-      <NavLink href="/destination">Destination</NavLink>
-      {/* <DropdownNavItem
-        trigger="Destination"
-        items={[
-          'Study in UK',
-          'Study in USA',
-          'Study in Canada',
-          'Study in Croatia',
-          'Study in South Korea',
-          'Study in South Africa',
-          'Study in Qatar',
-          'Study in Spain',
-          'Study in Argentina',
-          'Study in Germany',
-          'Study in Netherlands',
-        ]}
-      /> */}
-      {/* <DropdownNavItem trigger="Training" items={['IELTS', 'PTE', 'TOEFL']} /> */}
-      <NavLink href="/blog">Blog</NavLink>
-      <NavLink href="/contact-us">Contact us</NavLink>
+      <NavLink href="/about-us" onClick={closeSheet}>About Us</NavLink>
+      <NavLink href="/services" onClick={closeSheet}>Services</NavLink>
+      <NavLink href="/destination" onClick={closeSheet}>Destination</NavLink>
+      <NavLink href="/blog" onClick={closeSheet}>Blog</NavLink>
+      <NavLink href="/contact-us" onClick={closeSheet}>Contact us</NavLink>
     </>
   )
 
@@ -286,12 +273,13 @@ export default function Navbar() {
       </div>
 
       <div className="md:hidden">
-        <Sheet>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
               className="hover:bg-[#30745c]/10"
+              onClick={() => setIsSheetOpen(true)}
             >
               <Menu className="h-6 w-6" />
             </Button>
@@ -300,8 +288,11 @@ export default function Navbar() {
             side="right"
             className="w-[300px] sm:w-[400px] bg-white/80 backdrop-blur-md"
           >
+            <SheetTitle className="text-md font-semibold text-gray-900">
+              Deborah Study Abroad
+            </SheetTitle>
             <div className="flex flex-col space-y-6 mt-8">
-              <NavItems />
+              <NavItems closeSheet={() => setIsSheetOpen(false)} />
               <div className="flex items-center justify-between pt-4 border-t">
                 <motion.button
                   whileHover={{ scale: 1.1 }}
@@ -319,8 +310,9 @@ export default function Navbar() {
                     'shadow-lg hover:shadow-[#30745c]/25',
                     'transition-all duration-300'
                   )}
+                  onClick={() => setIsSheetOpen(false)}
                 >
-                  Contact Us
+                  <Link href="/contact-us">Contact Us</Link>
                 </Button>
               </div>
             </div>

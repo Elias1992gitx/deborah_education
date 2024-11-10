@@ -49,10 +49,10 @@ export default function AboutDibora() {
               <p className="text-md text-gray-600 max-w-xl leading-relaxed">
                 Deborah's Study Abroad has a long-standing reputation for
                 excellence, having guided thousands of students to prestigious
-                universities around the world. Our comprehensive services
-                include personalized counseling, test preparation, visa
-                assistance, and post-arrival support, making your educational
-                journey smooth and successful.
+                universities around the world. <br /> <br />
+                Our comprehensive services include personalized counseling, test
+                preparation, visa assistance, and post-arrival support, making
+                your educational journey smooth and successful.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
